@@ -10,3 +10,17 @@ This project is tested on a virtual machine that was created with Virtual Box an
 - Download the virtual machine configration though [this link](https://classroom.udacity.com/nanodegrees/nd004/parts/51200cee-6bb3-4b55-b469-7d4dd9ad7765/modules/c57b57d4-29a8-4c5f-9bb8-5d53df3e48f4/lessons/5475ecd6-cfdb-4418-85a2-f2583074c08d/concepts/14c72fe3-e3fe-4959-9c4b-467cf5b7c3a0) into a fresh new directory and start it from there
 - Get the result with the command `python log_analysis.py`
 
+## Create Views
+In the third function of log_analysis.py, two views were created to keep the database unchanged:
+`'create view logs as '
+  "select to_char(time, 'YYYY MM DD') as date, count(*) as logCount "
+  'from log '
+  'group by date; '`
+`'create view errorlogs as '
+ "select to_char(time, 'YYYY MM DD') as date, "
+ "count(*) as errorCount "
+ 'from log '
+ "where status like '404%' "
+ 'group by date; '`
+ 
+        
