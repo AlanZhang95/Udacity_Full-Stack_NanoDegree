@@ -12,15 +12,19 @@ This project is tested on a virtual machine that was created with Virtual Box an
 
 ## Create Views
 In the third function of log_analysis.py, two views were created to keep the database unchanged:
-`'create view logs as '
+```
+'create view logs as '
   "select to_char(time, 'YYYY MM DD') as date, count(*) as logCount "
   'from log '
-  'group by date; '`
-`'create view errorlogs as '
+  'group by date; '
+```
+```
+'create view errorlogs as '
  "select to_char(time, 'YYYY MM DD') as date, "
  "count(*) as errorCount "
  'from log '
  "where status like '404%' "
- 'group by date; '`
+ 'group by date; '
+```
  
         
